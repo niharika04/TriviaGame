@@ -57,10 +57,12 @@ var questions = [{
   correctAnswer: "Professor Utonium"
 }];
 
+//creating an object game
 var game = {
   correct:0,
   incorrect:0,
   counter:90,
+//game timer  
   decrement: function(){
     game.counter--;
     $('#counter-number').html(game.counter);
@@ -70,13 +72,14 @@ var game = {
       game.done();
     }
   },
+ // start function  
   start: function() {
     timer = setInterval(game.decrement, 1000);
 
     $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">90</span> Seconds</h2>');
     $('#start').remove();
 
-
+//for loop to show questions and answer choices(using append to follow the flow - questions-answechoices-button done)
     for (var i = 0; i < questions.length; i++) {
       panel.append('<h2>' + questions[i].question + '</h2>');
       for (var j = 0; j < questions[i].answers.length; j++) {
@@ -88,7 +91,7 @@ var game = {
   },
   done: function() {
 
-
+//answer evaluation
     $.each($("input[name='question-0']:checked"), function() {
       if ($(this).val() == questions[0].correctAnswer) {
         game.correct++;

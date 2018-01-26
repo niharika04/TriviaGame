@@ -24,43 +24,43 @@ $(document).on('click', '#done', function(e) {
 
 
 var questions = [{
-  question: "1 . In what month is the earth closest to the sun?",
-  answers: ["January", "February", "March", "April"],
-  correctAnswer: "January"
+  question: "1 . What is Doug's last name?",
+  answers: ["Funnie", "Skeeter", "Johnson", "April"],
+  correctAnswer: "Funnie"
 }, {
-  question: "2 . What is the most abundant element in earth's atmosphere?",
-  answers: ["Hydrogen", "Nitrogen", "Oxygen", "Carbon Dioxide"],
-  correctAnswer: "Nitrogen"
+  question: "2 . What song do Ren and Stimpy sing to make people more cheerful?",
+  answers: ["Cheery Uppy", "Happy Happy Joy Joy", "Fun Fun Cheer Smile", "Let's Spread The Joy"],
+  correctAnswer: "Happy Happy Joy Joy"
 }, {
-  question: "3 . By area, what is the smallest ocean in the world?",
-  answers: ["Arctic Ocean", "Indian Ocean", "Atlantic Ocean", "Pacific Ocean"],
-  correctAnswer: "Arctic Ocean"
+  question: "3 . What kind of animal is Rocko (from Rocko's Modern Life)?",
+  answers: ["mongoose", "dog", "wallaby", "cat"],
+  correctAnswer: "wallaby"
 }, {
-  question: "4 . What is the world's smallest continent?",
-  answers: ["Asia", "Africa", "Australia", "Europe"],
-  correctAnswer: "Australia"
+  question: "4 . In Dexter's Laboratory, what is Dexter's sister's name?",
+  answers: ["Dorothy", "Deedee", "Dolly", "Doju"],
+  correctAnswer: "Deedee"
 }, {
-  question: "5 . What is the name given to outermost layer of earth?",
-  answers: ["Rocks", "Crust", "Core", "Land"],
-  correctAnswer: "Crust"
+  question: "5 . In the Angry Beavers, which brother is named Norbert?",
+  answers: ["the beaver with darker fur", "the beaver with lighter fur", "no brother is named Norbert", "both were named Norbert"],
+  correctAnswer: "the beaver with lighter fur"
 }, {
-  question:  "6 . Which gas forms approximately 1% of atmosphere?",
-  answers: ["Hydrogen", "Carbon monoxide", "Argon", "Methyl"],
-  correctAnswer: "Argon"
+  question:  "6 . What TV network did Johnny Bravo first air on?",
+  answers: ["Cartoon Network", "Nickelodeon", "PBS Kids", "Pogo"],
+  correctAnswer: "Cartoon Network"
 }, {
-  question: "7 . What is the earth's core made of?",
-  answers: ["Dirt", "Rocks", "Gases", "Molten Iron and nickel"],
-  correctAnswer: "Molten Iron and nickel"
+  question: "7 . What occupation do Courage's owners hold?",
+  answers: ["business executives", "farmers", "quilters", "Jobless"],
+  correctAnswer: "farmers"
 }, {
-  question: "8 . Where is the Glacier bay national park?",
-  answers: ["Alaska", "Norway", "Iceland", "Canada"],
-  correctAnswer: "Alaska"
+  question: "8 . Who created the Powerpuff Girls?",
+  answers: ["Professur Mercurium", "Professor Plutonium", "Professor Germanium", "Professor Utonium"],
+  correctAnswer: "Professor Utonium"
 }];
 
 var game = {
   correct:0,
   incorrect:0,
-  counter:60,
+  counter:90,
   decrement: function(){
     game.counter--;
     $('#counter-number').html(game.counter);
@@ -73,7 +73,7 @@ var game = {
   start: function() {
     timer = setInterval(game.decrement, 1000);
 
-    $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">60</span> Seconds</h2>');
+    $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">90</span> Seconds</h2>');
     $('#start').remove();
 
 

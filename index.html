@@ -88,12 +88,13 @@
 		var wrongAnswers;
 		var unanswered;
 		var checked = null;
+		var clockRunning = true;
 
     	
 		
     	// Interval demonstration
     	// set our number counter to 30.
-    	var counter = 30;
+    	var counter = 5;
 
     	//variable that will hold our intervalId
     	var intervalId;
@@ -103,26 +104,31 @@
     //  The run function sets an interval
     //  that runs the decrement function once a second.
 		 function start() {
+		 	console.log("Start")
+		 	if (clockRunning) {
 		   	intervalId = setInterval(decrement, 1000);
 		   
 		   	// $("#submit").toggle();
-		   	
-		   }
+		   
+			}
+		}
+
 		 //  The decrement function.
-		   function decrement() {
+		function decrement() {
 		     counter--;
 
 		      if (counter >= 0) {
-		        $(".timer").html("Time remaining: " +counter + "s")
+		        $(".timer").html("Time remaining: " + counter + "s")
 		         
 		      }
 		      if (counter === 0) {
 		         $(".timer").html("Out of time!");
 		         clearInterval(counter);
-		         counter = 30;
+		         
+		        
 		       }
-		       
-		   }
+		      counter = 5; 
+		}
 
 
     	$("#s-button").on("click", function(){
@@ -133,49 +139,62 @@
     		
     		questionShown();
     		startSlideshow();
-    		start();
+    		
+    		
 			
     	});
 		
 	   
 
-	   function questionShown() {
+	function questionShown() {
+		 console.log("in questionShown")
+		 start();
 
+	   
+		 console.log("lock is running (qs)")
 		
-
-			
 			// $(".quiz").html("<p>" + questions[count].question + "</p>");
-			$(".quiz").html("<form> <p>" + questions[count].question + "</p><input type='radio' name='chooseone' value='1' id = 'rbutt'<p>" + questions[count].choices[0] + "</p><input type='radio' name='chooseone' value='1' id = 'rbutt'<p>" + questions[count].choices[1] + "</p><input type='radio' name='chooseone' value='1' id = 'rbutt'<p>" + questions[count].choices[2] + "</p><input type='radio' name='chooseone' value='1' id = 'rbutt'<p>" + questions[count].choices[3] + "</p></form>" );
-		
-
-			// setTimeout(start, 6000);
-		
-		}
+			$(".quiz").html("<form> <p>" + questions[count].question + "</p><p id='choices'> 1." + questions[count].choices[0] + "</p><p id='choices'> 2." + questions[count].choices[1] + "</p><p id='choices'> 3." + questions[count].choices[2] + "</p><p id='choices'> 4." + questions[count].choices[3] + "</p></form>" );
+			
+	}
+	clockRunning = false;
+	nextImage();
 
 
 
 	function nextImage() {
+	  	console.log("in next image")
+		if(!clockRunning) {
+		
+			 console.log("clock is not running (ni)")
+				
+			$(".quiz").html("<img src ='" + gif[count] +"' width='500px' height = '300px'/>");
+			count++;
 			
-		$(".quiz").html("<img src ='" + gif[count] +"' width='500px' height = '300px'/>");
-		count++;
-
-		setTimeout(questionShown, 6000);
-		// setTimeout(start, 6000);
+			setTimeout(questionShown, 1000);
+			// setTimeout(start, 6000);
+			
 
 
-		if (count === questions.length) {
+			if (count === questions.length) {
 
-			count = 0;
-			$("#submit").show();
-			stopSlideshow();
+				// count = 0;
+				$("#submit").show();
+
+				stopSlideshow();
+			} else {
+				
+			}
+
 		}
 		
 	}
+	
 
 	function startSlideshow() {
 
-		var showQuestion = setInterval(nextImage, 30000);
-		// setTimeout(start, 6000);
+		showQuestion = setInterval(nextImage, 5000);
+		
 
 			
 	}
@@ -185,26 +204,26 @@
 	}
 
 	
-	$("#rbutt").on("click", chosenAnswer);
+	// $("#rbutt").on("click", chosenAnswer);
 
-		function chosenAnswer () {
-		for (var i = 0; i<questions[i].choices[i].length; i++){
-			if (checked == true){
-				answerToQuestion = questions[i].choices[i].value;
-				console.log(answerToQuestion);
-				if (answerToQuestion == questions[i].correctAnswer){
-					correctAnswers ++;
-				} else {
-					wrongAnswers ++;
-				}
-			} else if (checked == null) {
-				unanswered ++;
-			}
-		}
+	// 	function chosenAnswer () {
+	// 	for (var i = 0; i<questions[i].choices[i].length; i++){
+	// 		if (checked == true){
+	// 			answerToQuestion = questions[i].choices[i].value;
+	// 			console.log(answerToQuestion);
+	// 			if (answerToQuestion == questions[i].correctAnswer){
+	// 				correctAnswers ++;
+	// 			} else {
+	// 				wrongAnswers ++;
+	// 			}
+	// 		} else if (checked == null) {
+	// 			unanswered ++;
+	// 		}
+	// 	}
 
 		
 
-	}
+	// }
 
 	
 

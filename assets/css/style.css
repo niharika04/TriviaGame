@@ -1,138 +1,77 @@
-body {
-	background: url(../images/background.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-}
-.body {
+body{
+	background-image: url("../images/background.jpg");
 	text-align: center;
-	height: 670px;
-	width: 1200px;
-	background-color: #05baa5;
-	margin: 0 auto;
-	color: white;
-	font-family: 'Risque', cursive;
-	border-radius: 50px;
-
-}
-div h1{
-	font-size: 65px;
+   font-family: 'Risque', cursive;
 }
 
-.timer{
-	font-size: 40px;
+html, body{
+  height:100%;
 }
 
-.quiz {
-	font-size: 30px;
 
+
+
+
+#wrapper{
+  padding: 5% 0;
+  background-color: #05baa5;
+  width:960px;
+  margin:5% auto;
+  box-sizing: border-box;
+  min-height: 80%;
+  border-radius: 50px
 }
 
-button.btn.btn-outline-light.btn-lg {
-	width: 300px;
-	height: 60px;
-	font-weight: bold;
-	font-size: 25px;
-
+#subwrapper{
+  position: relative;
+  top:20%;
 }
 
-button#submit {
-	width: 300px;
-	height: 60px;
-	font-weight: bold;
-	font-size: 25px;
-	text-align: center;
-	font-family: 'Risque', cursive;
-
+button{
+  display:block;
+  width:400px;
+  height:100px;
+  margin: 10px auto 0 auto;
+  border:none;
+  cursor: pointer;
+  background:transparent;
+  font-size: 42px;
+  font-family: 'Risque', cursive;
 }
 
-.body .buttons{
-	font-size: 20px;
-	font-weight: bold;
+
+h1{
+ 
+  font-size: 6.5em;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: white;
 }
 
-#btn0, #btn1, #btn2, #btn3 {
-	background-color: blue;
+h2{
+  font-size: 35px;
+  margin-bottom: 25px;
 }
 
-/*.doneButton {
-
-	width: 150px;
-	height: 50px;
-	position: relative;
-	color: white;
-	background-color: pink;
-	border-color: white;
-	font-size: 30px;
-	vertical-align: center;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	margin-left: 550px;
-
+h3{
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
-#start-button{
-
-	width: 150px;
-	height: 70px;
-	position: relative;
-	color: white;
-	background-color: pink;
-	border-color: gray;
-	font-size: 100px;
-	vertical-align: center;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	align-self: center;
-	margin-top:7px;
-	
-
+#start{
+  margin-top: 10%;
+  border:2px solid blue;
+  background: white;
+  font-family: 'Risque', cursive;
+  color: blue;
 }
 
-.jumbotron{
-
-	background-color: #AFE90F;
-	color: white;
-	position: relative;
-	text-align: center;
-	margin-bottom: 0px;
+#quiz-area h2{
+  margin-top: 50px;
+  color: white;
 }
 
-.container{
-
-	width:100%;
-	background-color: #E9C50F;
-	background-color: grey;
-
+button:hover {
+  border:2px solid blue;
+  background: white;
 }
-.alert {
-
-    position: fixed;
-    top: 0px;
-}
-
-.quiz{
-
-	position: relative;
-	color: white;
-	text-align: center;
-	
-}
-
-#demo {
-
-	width: 100%
-	height: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-#choiceItems {
-
-	background-color: #AFE90F;
-	color: white;
-	position: relative;
-	text-align: center;
-	margin-bottom: 0px;
-}*/

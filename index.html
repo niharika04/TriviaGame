@@ -94,7 +94,7 @@
 		
     	// Interval demonstration
     	// set our number counter to 30.
-    	var counter = 5;
+    	var counter = 30;
 
     	//variable that will hold our intervalId
     	var intervalId;
@@ -130,7 +130,7 @@
 		         $(".timer").html("Out of time!");
 		         clearInterval(counter);
 		         
-		        counter = 5; 
+		        counter = 30; 
 		       }
 		      
 		}
@@ -176,7 +176,7 @@
 			$(".quiz").html("<img src ='" + gif[count] +"' width='500px' height = '300px'/>");
 			count++;
 			
-			setTimeout(questionShown, 1000);
+			setTimeout(questionShown, 3000);
 			// setTimeout(start, 6000);
 			
 
@@ -198,7 +198,7 @@
 
 	function startSlideshow() {
 
-		showQuestion = setInterval(nextImage, 5000);
+		showQuestion = setInterval(nextImage, 30000);
 		
 
 			

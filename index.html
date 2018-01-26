@@ -88,7 +88,7 @@
 		var wrongAnswers;
 		var unanswered;
 		var checked = null;
-		var clockRunning = true;
+		var clockRunning = false;
 
     	
 		
@@ -105,12 +105,17 @@
     //  that runs the decrement function once a second.
 		 function start() {
 		 	console.log("Start")
-		 	if (clockRunning) {
+		 	if (!clockRunning) {
 		   	intervalId = setInterval(decrement, 1000);
 		   
 		   	// $("#submit").toggle();
-		   
+		   clockRunning = true;
 			}
+		}
+
+		function stop(){
+			clearInterval(intervalId);
+			clockRunning = false;
 		}
 
 		 //  The decrement function.
@@ -125,9 +130,9 @@
 		         $(".timer").html("Out of time!");
 		         clearInterval(counter);
 		         
-		        
+		        counter = 5; 
 		       }
-		      counter = 5; 
+		      
 		}
 
 
@@ -136,7 +141,7 @@
 
 		   	$(".questions").toggle();
 
-    		
+    		start();
     		questionShown();
     		startSlideshow();
     		
@@ -148,7 +153,7 @@
 
 	function questionShown() {
 		 console.log("in questionShown")
-		 start();
+		
 
 	   
 		 console.log("lock is running (qs)")
@@ -157,14 +162,14 @@
 			$(".quiz").html("<form> <p>" + questions[count].question + "</p><p id='choices'> 1." + questions[count].choices[0] + "</p><p id='choices'> 2." + questions[count].choices[1] + "</p><p id='choices'> 3." + questions[count].choices[2] + "</p><p id='choices'> 4." + questions[count].choices[3] + "</p></form>" );
 			
 	}
-	clockRunning = false;
-	nextImage();
+	
+	
 
 
 
 	function nextImage() {
 	  	console.log("in next image")
-		if(!clockRunning) {
+		
 		
 			 console.log("clock is not running (ni)")
 				
@@ -186,7 +191,7 @@
 				
 			}
 
-		}
+		
 		
 	}
 	

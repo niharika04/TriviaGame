@@ -160,7 +160,8 @@
 		
 			// $(".quiz").html("<p>" + questions[count].question + "</p>");
 			$(".quiz").html("<form> <p>" + questions[count].question + "</p><p id='choices'> 1." + questions[count].choices[0] + "</p><p id='choices'> 2." + questions[count].choices[1] + "</p><p id='choices'> 3." + questions[count].choices[2] + "</p><p id='choices'> 4." + questions[count].choices[3] + "</p></form>" );
-			
+		clockRunning = false;
+		stop();	
 	}
 	
 	
@@ -169,14 +170,14 @@
 
 	function nextImage() {
 	  	console.log("in next image")
-		
+		 
 		
 			 console.log("clock is not running (ni)")
 				
 			$(".quiz").html("<img src ='" + gif[count] +"' width='500px' height = '300px'/>");
 			count++;
 			
-			setTimeout(questionShown, 3000);
+			setTimeout(questionShown, 2000);
 			// setTimeout(start, 6000);
 			
 
@@ -191,7 +192,8 @@
 				
 			}
 
-		
+		clockRunning = true;
+		start();
 		
 	}
 	
